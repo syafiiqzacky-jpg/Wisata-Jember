@@ -1,0 +1,6 @@
+{
+  "name": "Jelajah Jember",
+  "description": "Kurator destinasi wisata terbaik di Kabupaten Jember — Pantai Papuma, Teluk Love, Kebun Teh Gunung Gambir, air terjun lereng Argopuro, dan panduan rute berbasis AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
