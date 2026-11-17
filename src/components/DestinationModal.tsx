@@ -1,24 +1,24 @@
 import React, { useEffect } from 'react';
-import { X, Clock, MapPin, Compass, Plus, Check, MessageSquare } from 'lucide-react';
+import { X, Clock, MapPin, Compass, Plus, Check, ArrowUpRight } from 'lucide-react';
 import type { DestinationItem } from '../../appConfig';
 import { SmartImage } from './SmartImage';
 
 interface DestinationModalProps {
   destination: DestinationItem | null;
   fallbackImage: string;
+  whatsappNumber: string;
   isInItinerary: boolean;
   onClose: () => void;
   onToggleItinerary: (id: string) => void;
-  onAskAi: (destination: DestinationItem) => void;
 }
 
 export const DestinationModal: React.FC<DestinationModalProps> = ({
   destination,
   fallbackImage,
+  whatsappNumber,
   isInItinerary,
   onClose,
   onToggleItinerary,
-  onAskAi,
 }) => {
   useEffect(() => {
     if (!destination) return;
@@ -32,6 +32,10 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
   }, [destination, onClose]);
 
   if (!destination) return null;
+
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    `Halo tim Jelajah Jember, saya ingin menanyakan informasi rute dan kunjungan ke ${destination.name} (Kec. ${destination.district}).`
+  )}`;
 
   return (
     <div
@@ -150,14 +154,15 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
               )}
             </button>
 
-            <button
-              type="button"
-              onClick={() => onAskAi(destination)}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-white text-[#1A1615] border border-[#D4AF37] hover:bg-[#D4AF37]/10 transition-colors whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]"
             >
-              <MessageSquare className="w-4 h-4 text-[#8A6A0A]" />
-              <span>Tanya Konsultan AI</span>
-            </button>
+              <span>Tanya via WhatsApp</span>
+              <ArrowUpRight className="w-4 h-4 text-[#8A6A0A]" />
+            </a>
           </div>
         </div>
       </div>

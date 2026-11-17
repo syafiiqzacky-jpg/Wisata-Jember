@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, Trash2, Sparkles, ArrowUpRight, MapPin } from 'lucide-react';
+import { X, Trash2, ArrowUpRight, MapPin } from 'lucide-react';
 import type { DestinationItem } from '../../appConfig';
 import { SmartImage } from './SmartImage';
 
@@ -11,7 +11,6 @@ interface ItineraryDrawerProps {
   onClose: () => void;
   onRemoveItem: (id: string) => void;
   onClearAll: () => void;
-  onPlanWithAi: () => void;
 }
 
 export const ItineraryDrawer: React.FC<ItineraryDrawerProps> = ({
@@ -22,7 +21,6 @@ export const ItineraryDrawer: React.FC<ItineraryDrawerProps> = ({
   onClose,
   onRemoveItem,
   onClearAll,
-  onPlanWithAi,
 }) => {
   useEffect(() => {
     if (!isOpen) return;
@@ -89,7 +87,7 @@ export const ItineraryDrawer: React.FC<ItineraryDrawerProps> = ({
                 Belum Ada Destinasi Dipilih
               </h3>
               <p className="mt-2 text-sm text-[#575049] max-w-xs leading-relaxed">
-                Tambahkan destinasi dari daftar wisata Jember untuk menghitung estimasi tiket dan menyusun rute harian secara otomatis.
+                Tambahkan destinasi dari daftar wisata Jember untuk menyusun daftar kunjungan dan menghubungi tim kami via WhatsApp.
               </p>
             </div>
           ) : (
@@ -147,26 +145,15 @@ export const ItineraryDrawer: React.FC<ItineraryDrawerProps> = ({
               {items.length} destinasi siap dirangkai ke dalam rute harian beserta rincian biaya di tiap lokasi.
             </p>
 
-            <div className="space-y-2.5">
-              <button
-                type="button"
-                onClick={onPlanWithAi}
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[#1A1615] text-[#FAF8F5] text-sm font-semibold hover:bg-[#2E2725] transition-colors whitespace-nowrap"
-              >
-                <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-                <span>Susun Rute Optimal dengan AI</span>
-              </button>
-
-              <a
-                href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-white text-[#1A1615] border border-[#E6E0D4] text-sm font-semibold hover:border-[#1A1615] transition-colors whitespace-nowrap"
-              >
-                <span>Konsultasi via WhatsApp</span>
-                <ArrowUpRight className="w-4 h-4 text-[#8A6A0A]" />
-              </a>
-            </div>
+            <a
+              href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[#1A1615] text-[#FAF8F5] text-sm font-semibold hover:bg-[#2E2725] transition-colors whitespace-nowrap"
+            >
+              <span>Konsultasi Rute via WhatsApp</span>
+              <ArrowUpRight className="w-4 h-4 text-[#D4AF37]" />
+            </a>
           </div>
         )}
       </div>

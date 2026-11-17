@@ -1,11 +1,11 @@
 # Jelajah Jember — Kurator Destinasi Wisata Kabupaten Jember
 
-Portal direktori wisata Kabupaten Jember yang menyajikan 21 destinasi unggulan dari pesisir Samudra Hindia hingga lereng Pegunungan Argopuro dan Raung, dilengkapi penyusun rencana perjalanan interaktif dan Konsultan Wisata AI berbasis Google Gemini (`@google/genai`).
+Portal direktori wisata Kabupaten Jember yang menyajikan 21 destinasi unggulan dari pesisir Samudra Hindia hingga lereng Pegunungan Argopuro dan Raung, dilengkapi penyusun rencana perjalanan interaktif serta konsultasi rute langsung melalui WhatsApp.
 
 ## Arsitektur Proyek
 
 - `appConfig.js` — Sumber konfigurasi terpusat (tema warna, kontak, profil destinasi, galeri, testimoni, dan FAQ) yang dibaca secara dinamis oleh Frontend dan Backend.
-- `server.ts` — Server Express full-stack terintegrasi dengan Vite middleware (development) dan static asset serving (production) serta endpoint `POST /api/recommendation`.
+- `server.ts` — Server Express full-stack terintegrasi dengan Vite middleware (development) dan static asset serving (production).
 - `app.js` — Entry point ES Module murni untuk deployment Node.js Selector di cPanel Shared Hosting.
 - `src/` — Aplikasi frontend React + TypeScript + Tailwind CSS v4 dengan font `Plus Jakarta Sans`.
 
@@ -40,15 +40,11 @@ Portal direktori wisata Kabupaten Jember yang menyajikan 21 destinasi unggulan d
    ```bash
    npm install
    ```
-3. Salin `.env.example` menjadi `.env` dan isi `GEMINI_API_KEY`:
-   ```env
-   GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
-   ```
-4. Jalankan mode pengembangan pada port `3000`:
+3. Jalankan mode pengembangan pada port `3000`:
    ```bash
    npm run dev
    ```
-5. Bangun bundle produksi untuk pengujian:
+4. Bangun bundle produksi untuk pengujian:
    ```bash
    npm run build
    ```
@@ -62,6 +58,5 @@ Portal direktori wisata Kabupaten Jember yang menyajikan 21 destinasi unggulan d
    - **Application mode**: `Production`.
    - **Application root**: arahkan ke folder unggahan Anda.
    - **Application startup file**: isi dengan `app.js`.
-4. Tambahkan Environment Variable `GEMINI_API_KEY` langsung pada panel konfigurasi Node.js App di cPanel.
-5. Klik **Run NPM Install** pada cPanel, lalu klik **Restart**.
-6. Seluruh rute React SPA dan endpoint `POST /api/recommendation` otomatis berjalan melalui port dinamis `process.env.PORT` dari cPanel.
+4. Klik **Run NPM Install** pada cPanel, lalu klik **Restart**.
+5. Seluruh rute React SPA dan endpoint API otomatis berjalan melalui port dinamis `process.env.PORT` dari cPanel.

@@ -44,6 +44,7 @@ export interface AppConfig {
   };
   contact: {
     whatsapp: string;
+    phoneDisplay: string;
     email: string;
     address: string;
   };

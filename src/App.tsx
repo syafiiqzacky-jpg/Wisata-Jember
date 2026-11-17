@@ -9,7 +9,6 @@ import {
   X,
   Menu,
   BookmarkCheck,
-  MessageSquare,
   ArrowUpRight,
   Mail,
   MapPin,
@@ -20,7 +19,6 @@ import { BrandLogo } from './components/BrandLogo';
 import { SmartImage } from './components/SmartImage';
 import { DestinationModal } from './components/DestinationModal';
 import { ItineraryDrawer } from './components/ItineraryDrawer';
-import { AiConsultantDrawer } from './components/AiConsultantDrawer';
 
 const CATEGORIES = [
   'Semua',
@@ -39,8 +37,6 @@ export default function App() {
     'pantai-papuma',
   ]);
   const [isItineraryOpen, setIsItineraryOpen] = useState<boolean>(false);
-  const [isAiOpen, setIsAiOpen] = useState<boolean>(false);
-  const [pendingAiPrompt, setPendingAiPrompt] = useState<string | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
@@ -69,28 +65,6 @@ export default function App() {
   const toggleItineraryItem = (id: string) => {
     setItineraryIds((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
-    );
-  };
-
-  const openAiWithPrompt = (promptText?: string) => {
-    if (promptText) {
-      setPendingAiPrompt(promptText);
-    }
-    setIsAiOpen(true);
-  };
-
-  const handlePlanItineraryWithAi = () => {
-    setIsItineraryOpen(false);
-    const names = itineraryItems.map((i) => i.name).join(', ');
-    openAiWithPrompt(
-      `Tolong susunkan jadwal rute harian yang optimal (urutan kunjungan berdasarkan lokasi, jam tiba ideal, dan ringkasan estimasi biaya tiket masuk) untuk destinasi pilihan saya berikut: ${names}.`
-    );
-  };
-
-  const handleAskAiForDestination = (destination: DestinationItem) => {
-    setActiveDestination(null);
-    openAiWithPrompt(
-      `Berikan panduan lengkap berkunjung ke ${destination.name} (Kec. ${destination.district}): jam terbaik tiba, rute tercepat dari Alun-Alun Jember, tips perlengkapan, dan destinasi lain yang searah.`
     );
   };
 
@@ -161,13 +135,14 @@ export default function App() {
           </nav>
 
           <div className="flex items-center gap-3 shrink-0">
-            <button
-              type="button"
-              onClick={() => setIsAiOpen(true)}
+            <a
+              href={`https://wa.me/${APP_CONFIG.contact.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-[#1A1615] text-[#FAF8F5] text-xs sm:text-sm font-semibold hover:bg-[#2E2725] transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]"
             >
               Konsultasi Rute
-            </button>
+            </a>
 
             <button
               type="button"
@@ -220,7 +195,7 @@ export default function App() {
                 </h1>
 
                 <p className="mt-5 text-base sm:text-[17px] text-[#575049] leading-relaxed max-w-xl">
-                  Direktori resmi {APP_CONFIG.products.length} destinasi unggulan Kabupaten Jember—dari tanjung pasir putih Pantai Papuma, cagar alam Bandealit, hingga kebun teh dan air terjun di lereng Gunung Argopuro, lengkap dengan informasi tiket, waktu terbaik, serta perencana rute otomatis.
+                  Direktori resmi {APP_CONFIG.products.length} destinasi unggulan Kabupaten Jember—dari tanjung pasir putih Pantai Papuma, cagar alam Bandealit, hingga kebun teh dan air terjun di lereng Gunung Argopuro, lengkap dengan informasi tiket, waktu terbaik, serta penyusun rencana perjalanan.
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center gap-3.5">
@@ -591,25 +566,18 @@ export default function App() {
                     Butuh Jadwal Khusus Rombongan atau Keluarga?
                   </h3>
                   <p className="mt-2 text-sm text-[#575049] leading-relaxed">
-                    Diskusikan preferensi destinasi Anda langsung bersama Konsultan AI kami atau tim koordinator di Jember.
+                    Diskusikan preferensi destinasi, jadwal rombongan, dan kebutuhan transportasi Anda langsung bersama tim koordinator Jelajah Jember.
                   </p>
                   <div className="mt-5 flex flex-wrap gap-3">
-                    <button
-                      type="button"
-                      onClick={() => setIsAiOpen(true)}
-                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#1A1615] text-[#FAF8F5] text-sm font-semibold hover:bg-[#2E2725] transition-colors whitespace-nowrap"
-                    >
-                      <MessageSquare className="w-4 h-4 text-[#D4AF37]" />
-                      <span>Tanya Konsultan AI</span>
-                    </button>
                     <a
                       href={`https://wa.me/${APP_CONFIG.contact.whatsapp}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#FAF8F5] border border-[#D8D0C2] text-[#1A1615] text-sm font-semibold hover:border-[#1A1615] transition-colors whitespace-nowrap"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#1A1615] text-[#FAF8F5] text-sm font-semibold hover:bg-[#2E2725] transition-colors whitespace-nowrap"
                     >
-                      <span>WhatsApp</span>
-                      <ArrowUpRight className="w-4 h-4 text-[#8A6A0A]" />
+                      <Phone className="w-4 h-4 text-[#D4AF37]" />
+                      <span>WhatsApp {APP_CONFIG.contact.phoneDisplay}</span>
+                      <ArrowUpRight className="w-4 h-4 text-[#D4AF37]" />
                     </a>
                   </div>
                 </div>
@@ -716,7 +684,7 @@ export default function App() {
                     rel="noopener noreferrer"
                     className="hover:text-[#FAF8F5] transition-colors tabular-nums"
                   >
-                    +{APP_CONFIG.contact.whatsapp}
+                    {APP_CONFIG.contact.phoneDisplay}
                   </a>
                 </li>
               </ul>
@@ -815,12 +783,12 @@ export default function App() {
       <DestinationModal
         destination={activeDestination}
         fallbackImage={APP_CONFIG.fallbackImage}
+        whatsappNumber={APP_CONFIG.contact.whatsapp}
         isInItinerary={
           activeDestination ? itineraryIds.includes(activeDestination.id) : false
         }
         onClose={() => setActiveDestination(null)}
         onToggleItinerary={toggleItineraryItem}
-        onAskAi={handleAskAiForDestination}
       />
 
       <ItineraryDrawer
@@ -831,15 +799,6 @@ export default function App() {
         onClose={() => setIsItineraryOpen(false)}
         onRemoveItem={toggleItineraryItem}
         onClearAll={() => setItineraryIds([])}
-        onPlanWithAi={handlePlanItineraryWithAi}
-      />
-
-      <AiConsultantDrawer
-        isOpen={isAiOpen}
-        onClose={() => setIsAiOpen(false)}
-        selectedDestinations={itineraryItems}
-        initialPrompt={pendingAiPrompt}
-        onConsumeInitialPrompt={() => setPendingAiPrompt(null)}
       />
     </div>
   );

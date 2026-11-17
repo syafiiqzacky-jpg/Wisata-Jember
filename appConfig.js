@@ -1,6 +1,6 @@
 export const APP_CONFIG = {
   brandName: "Jelajah Jember",
-  businessType: "Kurator Destinasi Wisata & Konsultan Rute Perjalanan Kabupaten Jember",
+  businessType: "Kurator Destinasi Wisata & Panduan Perjalanan Kabupaten Jember",
   tagline: "Eksplorasi Pesisir Selatan hingga Puncak Argopuro",
   themeColor: {
     primary: "#1A1615",
@@ -8,7 +8,8 @@ export const APP_CONFIG = {
     bgLight: "#FAF8F5",
   },
   contact: {
-    whatsapp: "62888217250871",
+    whatsapp: "6288217250871",
+    phoneDisplay: "+62 882 1725 0871",
     email: "info@satelitweb.com",
     address: "Pakusari, Kabupaten Jember, Jawa Timur",
   },
@@ -539,7 +540,7 @@ export const APP_CONFIG = {
     {
       question: "Bagaimana cara berkonsultasi mengenai rute pribadi atau perjalanan rombongan di Jember?",
       answer:
-        "Anda dapat memilih destinasi favorit ke dalam daftar Rencana Perjalanan lalu menggunakan fitur Konsultan Wisata AI untuk menyusun jadwal jam demi jam secara otomatis, atau langsung terhubung melalui WhatsApp kami untuk koordinasi transportasi dan pemandu lokal.",
+        "Anda dapat memilih destinasi favorit ke dalam daftar Rencana Perjalanan lalu mengirim daftar tersebut langsung melalui WhatsApp resmi kami di +62 882 1725 0871 untuk koordinasi rute harian, transportasi, dan pemandu lokal.",
     },
   ],
 };
