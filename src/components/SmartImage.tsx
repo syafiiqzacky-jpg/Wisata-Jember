@@ -41,10 +41,10 @@ export const SmartImage: React.FC<SmartImageProps> = ({
       <div
         role="img"
         aria-label={alt}
-        className={`flex flex-col items-center justify-center bg-[#EDE8DF] text-[#575049] p-6 text-center ${className}`}
+        className={`flex flex-col items-center justify-center bg-[#E8EEF6] text-[#475569] p-6 text-center ${className}`}
       >
-        <Mountain className="w-8 h-8 text-[#8A6A0A] mb-2" strokeWidth={1.5} />
-        <span className="text-xs font-medium tracking-tight text-[#1A1615]">{alt}</span>
+        <Mountain className="w-8 h-8 text-[#1D4ED8] mb-2" strokeWidth={1.5} />
+        <span className="text-xs font-medium tracking-tight text-[#0B1F3A]">{alt}</span>
       </div>
     );
   }

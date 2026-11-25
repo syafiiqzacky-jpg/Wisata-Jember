@@ -3,9 +3,9 @@ export const APP_CONFIG = {
   businessType: "Kurator Destinasi Wisata & Panduan Perjalanan Kabupaten Jember",
   tagline: "Eksplorasi Pesisir Selatan hingga Puncak Argopuro",
   themeColor: {
-    primary: "#1A1615",
-    accent: "#D4AF37",
-    bgLight: "#FAF8F5",
+    primary: "#0B1F3A",
+    accent: "#1D4ED8",
+    bgLight: "#F6F8FB",
   },
   contact: {
     whatsapp: "6288217250871",
@@ -25,9 +25,9 @@ export const APP_CONFIG = {
       bestTime: "Pagi hari (06.30) atau menjelang senja",
       travelTimeFromCity: "± 65 menit dari Alun-Alun Jember",
       shortDescription:
-        "Tanjung pasir putih berpadu tujuh batu karang raksasa Malikan di pesisir selatan, dengan harga tiket masuk sekitar Rp 25.000 per orang.",
+        "Tanjung pasir putih berpadu tujuh batu karang raksasa Malikan di pesisir selatan, dengan harga tiket masuk sekitar Rp 12.500 per orang.",
       description:
-        "Dikenal sebagai Pantai Tanjung Papuma (Pasir Putih Malikan), destinasi unggulan Kabupaten Jember ini menawarkan perpaduan langka antara hamparan pasir putih lembut, air laut biru kehijauan, serta tujuh formasi karang ikonik yang menjulang di tengah ombak Samudra Hindia. Tersedia gardu pandang Bukit Siti Hinggil, perahu nelayan, dan sentra kuliner ikan bakar segar. Harga tiket masuk reguler sekitar Rp 25.000 per orang pada hari biasa dan Rp 30.000 saat akhir pekan atau hari libur, belum termasuk tarif parkir kendaraan.",
+        "Dikenal sebagai Pantai Tanjung Papuma (Pasir Putih Malikan), destinasi unggulan Kabupaten Jember ini menawarkan perpaduan langka antara hamparan pasir putih lembut, air laut biru kehijauan, serta tujuh formasi karang ikonik yang menjulang di tengah ombak Samudra Hindia. Tersedia gardu pandang Bukit Siti Hinggil, perahu nelayan, dan sentra kuliner ikan bakar segar. Harga tiket masuk kawasan Pantai Papuma adalah Rp 12.500 per orang, belum termasuk tarif parkir kendaraan.",
       highlights: [
         "Gardu pandang Bukit Siti Hinggil",
         "Tujuh batu karang ikonik Malikan",
@@ -45,9 +45,9 @@ export const APP_CONFIG = {
       bestTime: "Sore hari (15.30 – 17.30 WIB)",
       travelTimeFromCity: "± 55 menit dari Alun-Alun Jember",
       shortDescription:
-        "Formasi batu karang vulkanik sepanjang 110 meter menyerupai sisik naga di pesisir Ambulu, dengan tiket masuk sekitar Rp 10.000 per orang.",
+        "Formasi batu karang vulkanik sepanjang 110 meter menyerupai sisik naga di pesisir Ambulu, dengan tiket masuk sekitar Rp 12.500 per orang.",
       description:
-        "Terletak bertetangga langsung dengan Papuma, Pantai Watu Ulo terkenal berkat batuan karang hitam memanjang (±110 meter) menyerupai tubuh ular raksasa Nogo Rojo yang membelah deburan ombak selatan. Pesisirnya memiliki pasir vulkanik kecokelatan yang luas, tradisi budaya petik laut tahunan, serta jalur akses mudah ke Bukit Payangan. Harga tiket masuk kawasan Pantai Watu Ulo berkisar Rp 10.000 per orang ditambah biaya parkir kendaraan.",
+        "Terletak bertetangga langsung dengan Papuma, Pantai Watu Ulo terkenal berkat batuan karang hitam memanjang (±110 meter) menyerupai tubuh ular raksasa Nogo Rojo yang membelah deburan ombak selatan. Pesisirnya memiliki pasir vulkanik kecokelatan yang luas, tradisi budaya petik laut tahunan, serta jalur akses mudah ke Bukit Payangan. Harga tiket masuk kawasan Pantai Watu Ulo adalah Rp 12.500 per orang ditambah biaya parkir kendaraan.",
       highlights: [
         "Formasi karang sisik naga sepanjang 110 m",
         "Spot panorama matahari terbenam",
@@ -65,9 +65,9 @@ export const APP_CONFIG = {
       bestTime: "Matahari terbit (05.15 – 07.00 WIB)",
       travelTimeFromCity: "± 55 menit dari Alun-Alun Jember",
       shortDescription:
-        "Teluk alami berbentuk hati yang disaksikan dari Bukit Domba di kawasan Pantai Payangan, dengan tiket masuk sekitar Rp 10.000 – Rp 15.000 per orang.",
+        "Teluk alami berbentuk hati yang disaksikan dari Bukit Domba di kawasan Pantai Payangan; tanpa tiket masuk khusus, cukup membayar parkir sekitar Rp 5.000.",
       description:
-        "Berada tepat di sisi timur Pantai Payangan, Teluk Love (Teluk Cinta) menghadirkan panorama alam berbentuk simbol hati simetris yang dibentuk oleh dua semenanjung hijau dan lengkungan pasir pantai. Pengunjung mendaki jalur bukit ringan selama 10–15 menit menuju Bukit Domba untuk menikmati lanskap terbaik di pesisir selatan Jember. Harga tiket masuk kawasan Payangan dan pendakian bukit berkisar Rp 10.000 – Rp 15.000 per orang di luar biaya parkir kendaraan.",
+        "Berada tepat di sisi timur Pantai Payangan, Teluk Love (Teluk Cinta) menghadirkan panorama alam berbentuk simbol hati simetris yang dibentuk oleh dua semenanjung hijau dan lengkungan pasir pantai. Pengunjung mendaki jalur bukit ringan selama 10–15 menit menuju Bukit Domba untuk menikmati lanskap terbaik di pesisir selatan Jember. Kawasan Teluk Love tidak memungut tiket masuk khusus—pengunjung cukup membayar biaya parkir kendaraan sekitar Rp 5.000.",
       highlights: [
         "Sudut pandang alami berbentuk hati dari Bukit Domba",
         "Trekking ringan 15 menit ke puncak bukit",
